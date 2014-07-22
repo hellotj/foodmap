@@ -1,0 +1,11 @@
+<h1> Your food </h1>
+
+<%= @food.type %>
+<%= @food.harvested_on %>
+<%= f.collection_select(:market, Market.all, :id, :market_name) %>
+
+<%= link_to "Edit", edit_food_path(@food), class: "btn btn-info pull-right"%>
+
+<%= link_to "New", new_food_path(@food), class: "btn btn-info pull-right" %>
+
+<%= link_to "Delete", @food, :confirm => "are you sure?", :method => :delete, class: "btn btn-info pull-right" %>

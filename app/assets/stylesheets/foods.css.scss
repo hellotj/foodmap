@@ -1,0 +1,23 @@
+// Place all the styles related to the foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+$maincolor: lighten(#449999, 20%);
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+   background-color: $maincolor;
+}
+
+.profile {
+	
+	background-color: $maincolor;
+	border-radius: 15px;
+}
+
+#map-canvas {
+	height: 100%;
+	height: 100%;
+	margin: 0 auto;
+	}

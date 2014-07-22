@@ -1,0 +1,33 @@
+   
+
+<%= form_for @food do |f| %>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :harvested_on %><br />
+    <%= f.text_field :harvested_on, 'data-behaviour' => 'datepicker' %>
+  </div>
+   <div class="field">
+  <%= f.label :market %><br />
+
+  <%= f.collection_select(:market, Market.all, :id, :market_name) %><br /><br />
+</div>
+
+   <div class="field">
+   <%= f.label :Latitude %><br />
+  <%= f.text_field :lat %><br />
+</div>
+
+   <div class="field">
+  <%= f.label :Longitude %><br />
+  <%= f.text_field :longi %><br />
+</div>
+
+  <div class="actions"><br />
+    <%= f.submit %>
+  </div>
+
+
+<% end %>

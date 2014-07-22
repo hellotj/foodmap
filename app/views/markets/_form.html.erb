@@ -1,0 +1,21 @@
+<%= form_for @market do |f| %>
+  <div class="field">
+    <%= f.label :market_name %><br />
+    <%= f.text_field :market_name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.number_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.number_field :longitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

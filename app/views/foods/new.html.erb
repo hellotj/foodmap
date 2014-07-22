@@ -1,0 +1,29 @@
+<h1>Update Your Latest Batch of Fresh Food</h1>
+
+<%= render 'form' %>
+
+
+<%= form_tag root_path do %>
+  <%=field_set_tag "please input what you want to translate" do %>
+  
+    <%=datetime_field_tag :code %>
+    <%=submit_tag "Create a Code"%>
+  <%end%>
+<%end%>
+<%if @qr%>
+  <div class='rqrcode'>
+    <table >
+     <% @qr.modules.each_index do |x| -%>
+       <tr>
+       <% @qr.modules.each_index do |y| -%>
+        <% if @qr.dark?(x,y) -%>
+        <td class="black"/>
+        <% else -%>
+        <td class="white"/>
+        <% end -%>
+       <% end -%>
+       </tr>
+     <% end -%>
+    </table>
+  </div>
+<%end%>

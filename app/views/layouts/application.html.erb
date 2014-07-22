@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Foodmap</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+<%= csrf_meta_tag %>
+ <title>Chill Stuff</title>
+</head>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">mapmyfood</a>
+    </div>
+       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Your Markets", markets_path %></li>
+        <li><%= link_to "Add a Market", new_market_path %></li>
+        <li><%= link_to "Add a new batch", new_food_path %></li>
+        <li><%= link_to "Your Food", foods_path %></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if !current_user %>
+          <li><%= link_to "Sign Up", new_user_path %></li>
+          <li><%= link_to "Log In", new_sessions_path %></li>
+        <% else %>
+          <li>Hello, <%= current_user.name %></li>
+          <li><%= link_to "Sign Out", sessions_path, :method => :delete %></li>
+        <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid wdi" >
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>

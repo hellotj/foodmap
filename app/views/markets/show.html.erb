@@ -1,0 +1,11 @@
+<h1><%= @market.market_name %></h1>
+
+<%= @market.address %>
+<%= @market.latitude %>
+<%= @market.longitude %>
+
+<%= link_to "Edit", edit_market_path(@market), class: "btn btn-info pull-right"%>
+
+<%= link_to "New", new_market_path(@market), class: "btn btn-info pull-right" %>
+
+<%= link_to "Delete", @market, :confirm => "are you sure?", :method => :delete, class: "btn btn-info pull-right" %>

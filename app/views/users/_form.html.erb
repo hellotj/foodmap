@@ -1,0 +1,20 @@
+<%= form_for @user do |f| %>
+  Name: <%= f.text_field :name %><br />
+
+  Email: <%= f.text_field :email%><br />
+
+  Create a Password: <%= f.text_field :password %><br />
+
+  Check if you are a farmer: <%= f.check_box :is_farmer %><br /><br />
+
+  If no, then skip the following questions.
+
+  <br />
+
+  What are the coordinates of your farm?<br /> 
+  Latitude: <%= f.number_field :latitude %><br />
+  Longitude: <%= f.number_field :longitude %><br />
+
+  <br />
+  <%= f.submit %>
+<% end %>
