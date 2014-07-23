@@ -6,7 +6,7 @@
 <%= form_tag root_path do %>
   <%=field_set_tag "please input what you want to translate" do %>
   
-    <%=datetime_field_tag :code %>
+    <%=text_field_tag :code %>
     <%=submit_tag "Create a Code"%>
   <%end%>
 <%end%>
